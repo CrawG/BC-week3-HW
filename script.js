@@ -7,32 +7,30 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 var wantNumber;
 var wantCharacter;
 var wantUppercase;
 var wantLowercase;
 
+// password value options
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 letterUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "X", "T", "U", "V", "W", "X", "Y", "Z"]
 
-specCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+specCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-
+var passwordLength;
 var options;
 
-
+// function to generate password
 function generatePassword () {
 
-    var passwordLength = parseInt(prompt("How many characters do you want?"));
+    passwordLength = prompt("How many characters do you want?");
 
     if (passwordLength >= 8 && passwordLength <= 128) {
 
@@ -88,8 +86,8 @@ function generatePassword () {
         options = number;
     }
     else if (!wantCharacter && !wantNumber && !wantUppercase && !wantLowercase) {
-        alert("you need to choose password options");
-        generatePassword()
+        alert("You need to choose password options");
+        generatePassword();
     }  
     
     }
@@ -97,7 +95,31 @@ function generatePassword () {
         alert("Please choose a number between 8 and 128");
         generatePassword();
     }
-        
+    else if (typeof passwordLength === 'string') {
+        alert("Please choose a numeric value");
+        generatePassword();
+    }
+    
+//  Got some tutor help with this part, in order to randomly select the password options, join them together and display the password in the textbox
+
+var password =[]
+
+for (var i = 0; i < passwordLength; i++) {
+    var pickOptions = options[Math.floor(Math.random() * options.length)];
+    password.push(pickOptions);
 }
 
-generatePassword()
+var pwSelection = password.join("");
+userInput(pwSelection);
+return pwSelection;
+}   
+
+
+function userInput(pwSelection) {
+    document.getElementById("password").textContent = pwSelection;
+}
+
+// Event listener to generate button
+generateBtn.addEventListener("click", writePassword)
+
+// It Works!!
