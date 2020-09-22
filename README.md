@@ -3,11 +3,13 @@ Bootcamp week 3 homework - Password Generator
 
 Link to published pgae: https://crawg.github.io/BC-week3-HW/
 
-Upon clicking "Generate Paasowrd" button, user is asked to choose how long they want thier password to be. 
+![Screenshot 1](PG Screenshot 1.png)
 
-    - If user enters a number less than 8 or greater than 128, they     are prompted to enter a number in the accepted range. 
+Upon clicking "Generate Password" button, user is asked to choose how long they want thier password to be. 
 
-    - If user enters anything other than a number when asked how long   they want the password to be, they are prompted to enter a numeric value. 
+    - If user enters a number less than 8 or greater than 128, they are prompted to enter a number in the accepted range. 
+
+    - If user enters anything other than a number when asked how long they want the password to be, they are prompted to enter a numeric value. 
 
 User will then be given options of password charaters to choose from: upperclase letters, lowercase letters, numbers, and special characters.
 
@@ -15,3 +17,4 @@ User will then be given options of password charaters to choose from: upperclase
 
 Once the selection criteria is entered correctly, the random password is generated based on the selected craiteria and displayed in the text box.
  
+![Screenshot 2](PG Screenshot 2.png) 
