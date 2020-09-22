@@ -9,13 +9,15 @@ function writePassword() {
   passwordText.value = password;
 }
 
-
+// Variables
 var wantNumber;
 var wantCharacter;
 var wantUppercase;
 var wantLowercase;
+var passwordLength;
+var options;
 
-// password value options
+// Vassword value options
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -24,10 +26,8 @@ letterUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 
 specCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-var passwordLength;
-var options;
 
-// function to generate password
+// Function to generate password (used "concat method" to pull from multiple arrays, found here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)//
 function generatePassword () {
 
     passwordLength = prompt("How many characters do you want?");
@@ -86,7 +86,7 @@ function generatePassword () {
         options = number;
     }
     else if (!wantCharacter && !wantNumber && !wantUppercase && !wantLowercase) {
-        alert("You need to choose password options");
+        alert("Please choose one or more password options");
         generatePassword();
     }  
     
@@ -100,8 +100,8 @@ function generatePassword () {
         generatePassword();
     }
     
-//  Got some tutor help with this part, in order to randomly select the password options, join them together and display the password in the textbox
-
+//  Received help from multiple tutors with this part, in order to randomly select the password options, join them together and display the password in the textbox:
+// --------- 
 var password =[]
 
 for (var i = 0; i < passwordLength; i++) {
@@ -114,10 +114,10 @@ userInput(pwSelection);
 return pwSelection;
 }   
 
-
 function userInput(pwSelection) {
     document.getElementById("password").textContent = pwSelection;
 }
+// --------- 
 
 // Event listener to generate button
 generateBtn.addEventListener("click", writePassword)
