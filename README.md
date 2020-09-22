@@ -3,7 +3,7 @@ Bootcamp week 3 homework - Password Generator
 
 Link to published pgae: https://crawg.github.io/BC-week3-HW/
 
-![Screenshot 1](PG Screenshot 1.png)
+![Screenshot 1](https://github.com/CrawG/BC-week3-HW/blob/master/PG%20Screenshot%201.png)
 
 Upon clicking "Generate Password" button, user is asked to choose how long they want thier password to be. 
 
@@ -17,4 +17,4 @@ User will then be given options of password charaters to choose from: upperclase
 
 Once the selection criteria is entered correctly, the random password is generated based on the selected craiteria and displayed in the text box.
  
-![Screenshot 2](PG Screenshot 2.png) 
+![Screenshot 2](https://github.com/CrawG/BC-week3-HW/blob/master/PG%20Screenshot%202.png) 
